@@ -1,5 +1,23 @@
-// The URL where our backend server is running
-const API_URL = 'http://localhost:3000';
+let totalSlots = 10;
+let availableSlots = totalSlots;
+
+function parkCar() {
+  if (availableSlots > 0) {
+    availableSlots--;
+    alert("Car parked successfully 🚗\nAvailable slots: " + availableSlots);
+  } else {
+    alert("Parking Full ❌");
+  }
+}
+
+function exitCar() {
+  if (availableSlots < totalSlots) {
+    availableSlots++;
+    alert("Car exited 🚘\nAvailable slots: " + availableSlots);
+  } else {
+    alert("Parking already empty");
+  }
+}
 
 // Call loadStatus when the page first loads
 document.addEventListener('DOMContentLoaded', () => {
@@ -99,4 +117,5 @@ async function loadStatus() {
         console.error('Error loading status:', error);
         statusList.innerHTML = "<li>Could not load parking status. Is the server running?</li>";
     }
+
 }
