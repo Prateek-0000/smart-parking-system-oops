@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Parking Lot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Smart Parking Lot Management</h1>
+    </header>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>Park Vehicle</h2>
+            <label>Select vehicle type</label>
+            <select id="vehicleType">
+                <option value="Car">Car</option>
+                <option value="Bike">Bike</option>
+            </select>
+
+            <label>Vehicle Number</label>
+            <input type="text" id="vehicleNumber" placeholder="Enter vehicle number">
+
+            <button onclick="parkVehicle()">Park Vehicle</button>
+        </div>
+
+        <div class="card">
+            <h2>Exit Vehicle</h2>
+            <label>Enter Vehicle Number</label>
+            <input type="text" id="exitNumber" placeholder="Enter vehicle number">
+
+            <button onclick="exitVehicle()">Exit Vehicle</button>
+        </div>
+
+        <div class="card">
+            <h2>Parking Lot Status</h2>
+            <button onclick="loadStatus()">Refresh</button>
+            <ul id="statusList"></ul>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
